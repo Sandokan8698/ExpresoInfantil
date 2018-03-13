@@ -1,5 +1,5 @@
 
-package app.qk.teliver.utils;
+package app.damg.expresoinfantil.utils;
 
 import android.Manifest;
 import android.app.Activity;
@@ -25,8 +25,7 @@ import android.widget.TextView;
 
 import com.teliver.sdk.models.TConstants;
 
-import app.qk.teliver.R;
-import app.qk.teliver.activities.LoginActivity;
+import app.damg.expresoinfantil.R;
 
 
 public class Utils {

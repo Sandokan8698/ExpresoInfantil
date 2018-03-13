@@ -1,12 +1,12 @@
-package app.qk.teliver.activities;
+package app.damg.expresoinfantil.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import app.qk.teliver.utils.Constants;
-import app.qk.teliver.utils.MPreference;
+import app.damg.expresoinfantil.utils.Constants;
+import app.damg.expresoinfantil.utils.MPreference;
 
 
 public class ActivityStart extends AppCompatActivity {
@@ -18,7 +18,7 @@ public class ActivityStart extends AppCompatActivity {
         MPreference preference = new MPreference(this);
         Class className;
 
-        // preference.clearAllPreference();
+         preference.clearAllPreference();
 
         if (preference.getBoolean(Constants.IS_LOGGED_IN) &&  !preference.getString(Constants.LOGGE_IN_TOKEN).equals(null)) {
             if (preference.getBoolean(Constants.LOGGED_IN_PADRE))

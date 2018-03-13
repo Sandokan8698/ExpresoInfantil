@@ -1,11 +1,8 @@
-package app.qk.teliver.utils;
+package app.damg.expresoinfantil.utils;
 
 import android.content.Context;
 
-import org.json.JSONObject;
-
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 
 /**
  * Created by denys on 05/03/2018.

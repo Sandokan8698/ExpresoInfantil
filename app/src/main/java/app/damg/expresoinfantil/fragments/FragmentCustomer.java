@@ -1,4 +1,4 @@
-package app.qk.teliver.fragments;
+package app.damg.expresoinfantil.fragments;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -21,8 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import app.qk.teliver.R;
-import app.qk.teliver.utils.Utils;
+import app.damg.expresoinfantil.R;
+import app.damg.expresoinfantil.utils.Utils;
 
 
 public class FragmentCustomer extends Fragment {

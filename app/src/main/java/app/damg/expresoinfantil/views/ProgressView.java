@@ -1,4 +1,4 @@
-package app.qk.teliver.views;
+package app.damg.expresoinfantil.views;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ProgressBar;
 
-import app.qk.teliver.R;
+import app.damg.expresoinfantil.R;
 
 public class ProgressView extends Dialog {
 

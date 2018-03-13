@@ -1,4 +1,4 @@
-package app.qk.teliver.fragments;
+package app.damg.expresoinfantil.fragments;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -33,12 +33,12 @@ import com.teliver.sdk.models.TripBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.qk.teliver.R;
-import app.qk.teliver.adapters.TripsAdapter;
-import app.qk.teliver.utils.Constants;
-import app.qk.teliver.utils.MPreference;
-import app.qk.teliver.utils.Utils;
-import app.qk.teliver.views.CustomToast;
+import app.damg.expresoinfantil.R;
+import app.damg.expresoinfantil.adapters.TripsAdapter;
+import app.damg.expresoinfantil.utils.Constants;
+import app.damg.expresoinfantil.utils.MPreference;
+import app.damg.expresoinfantil.utils.Utils;
+import app.damg.expresoinfantil.views.CustomToast;
 
 import static android.content.Context.LOCATION_SERVICE;
 

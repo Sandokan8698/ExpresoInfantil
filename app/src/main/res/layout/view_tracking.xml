@@ -8,7 +8,7 @@
     android:padding="25dp">
 
 
-    <app.qk.teliver.views.CustomEditText
+    <app.damg.expresoinfantil.views.CustomEditText
         android:id="@+id/edt_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
         android:layout_height="0.2dp"
         android:background="@color/color_line" />
 
-    <app.qk.teliver.views.CustomEditText
+    <app.damg.expresoinfantil.views.CustomEditText
         android:id="@+id/edt_msg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
         android:background="@color/color_line" />
 
 
-    <app.qk.teliver.views.CustomEditText
+    <app.damg.expresoinfantil.views.CustomEditText
         android:id="@+id/edt_user_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
-        <app.qk.teliver.views.CustomEditText
+        <app.damg.expresoinfantil.views.CustomEditText
             android:id="@+id/edt_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
             android:textColorHint="@color/color_hint"
             android:textSize="16sp" />
 
-        <app.qk.teliver.views.CustomTextView
+        <app.damg.expresoinfantil.views.CustomTextView
             android:id="@+id/btn_ok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
         android:layout_height="0.2dp"
         android:background="@color/color_line" />
 
-    <app.qk.teliver.views.CustomTextView
+    <app.damg.expresoinfantil.views.CustomTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"

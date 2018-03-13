@@ -1,4 +1,4 @@
-package app.qk.teliver;
+package app.damg.expresoinfantil;
 
 import android.support.multidex.MultiDexApplication;
 
@@ -10,7 +10,7 @@ public class MApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        Teliver.init(this,"b0c03f77755518685a30096d3a1b08ab");
+        Teliver.init(this,"d9e95fae3b87d375a43b76c6f882dada");
         TLog.setVisible(true);
     }
 }

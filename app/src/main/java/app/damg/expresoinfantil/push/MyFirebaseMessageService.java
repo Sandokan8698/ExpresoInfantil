@@ -1,4 +1,4 @@
-package app.qk.teliver.push;
+package app.damg.expresoinfantil.push;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -18,7 +18,7 @@ import com.teliver.sdk.models.TrackingBuilder;
 
 import java.util.Map;
 
-import app.qk.teliver.R;
+import app.damg.expresoinfantil.R;
 
 
 public class MyFirebaseMessageService extends FirebaseMessagingService {

@@ -1,4 +1,4 @@
-package app.qk.teliver.adapters;
+package app.damg.expresoinfantil.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +11,7 @@ import com.teliver.sdk.models.Trip;
 
 import java.util.List;
 
-import app.qk.teliver.R;
+import app.damg.expresoinfantil.R;
 
 
 public class TripsAdapter extends RecyclerView.Adapter<TripsAdapter.MyViewHolder> {

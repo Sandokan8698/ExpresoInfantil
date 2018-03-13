@@ -1,6 +1,8 @@
-package app.qk.teliver.activities;
+package app.damg.expresoinfantil.activities;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -13,11 +15,13 @@ import android.view.View;
 import com.teliver.sdk.core.Teliver;
 import com.teliver.sdk.models.UserBuilder;
 
-import app.qk.teliver.R;
-import app.qk.teliver.fragments.FragmentCustomer;
-import app.qk.teliver.utils.Utils;
+import app.damg.expresoinfantil.R;
+import app.damg.expresoinfantil.fragments.FragmentDriver;
+import app.damg.expresoinfantil.utils.Constants;
+import app.damg.expresoinfantil.utils.Utils;
+import app.damg.expresoinfantil.views.CustomToast;
 
-public class ActivityCustomer extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
+public class ActivityDriver extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
 
     private Toolbar toolbar;
 
@@ -27,14 +31,13 @@ public class ActivityCustomer extends AppCompatActivity implements FragmentManag
 
     private Snackbar snackbar;
 
-    private FragmentCustomer fragmentCustomer;
+    private FragmentDriver fragmentDriver;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-
     }
 
     @Override
@@ -49,17 +52,14 @@ public class ActivityCustomer extends AppCompatActivity implements FragmentManag
         fragmentManager = getSupportFragmentManager();
         fragmentManager.addOnBackStackChangedListener(this);
         changeFragment(0);
-        Teliver.identifyUser(new UserBuilder("test_customer")
-                .setUserType(UserBuilder.USER_TYPE.CONSUMER)
-                .registerPush()
-                .build());
+        Teliver.identifyUser(new UserBuilder("test_driver").setUserType(UserBuilder.USER_TYPE.OPERATOR).build());
     }
 
     private void changeFragment(int caseValue) {
         if (caseValue == 0) {
-            if (fragmentCustomer == null)
-                fragmentCustomer = new FragmentCustomer();
-            switchView(fragmentCustomer, getString(R.string.app_name));
+            if (fragmentDriver == null)
+                fragmentDriver = new FragmentDriver();
+            switchView(fragmentDriver, getString(R.string.app_name));
         }
     }
 
@@ -105,4 +105,15 @@ public class ActivityCustomer extends AppCompatActivity implements FragmentManag
         }
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[],
+                                           @NonNull int[] grantResults) {
+        if (requestCode != Constants.PERMISSION_REQ_CODE)
+            return;
+        if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (fragmentDriver != null)
+                fragmentDriver.validateTrip();
+        } else
+            CustomToast.showToast(this, getString(R.string.text_location_permission));
+    }
 }

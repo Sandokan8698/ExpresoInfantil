@@ -1,10 +1,10 @@
-package app.qk.teliver.views;
+package app.damg.expresoinfantil.views;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 
-import app.qk.teliver.utils.Utils;
+import app.damg.expresoinfantil.utils.Utils;
 
 
 public class CustomEditText extends AppCompatEditText {

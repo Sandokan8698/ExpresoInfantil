@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "app.qk.teliver"
+        applicationId "app.damg.expresoinfantil"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
@@ -33,3 +33,4 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
 }
+

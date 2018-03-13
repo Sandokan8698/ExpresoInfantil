@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="app.qk.teliver">
+    package="app.damg.expresoinfantil">
 
     <application
-        android:name=".MApplication"
+        android:name="app.damg.expresoinfantil.MApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,12 +15,12 @@
             android:value="AIzaSyA-tPuXPRAh_0x1-BlnJvp-30-Wm-hvJSs" />
 
         <activity
-            android:name=".activities.ActivityLauncher"
+            android:name="app.damg.expresoinfantil.activities.ActivityLauncher"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
-            android:name=".activities.ActivityStart"
+            android:name="app.damg.expresoinfantil.activities.ActivityStart"
             android:screenOrientation="portrait">
 
             <intent-filter>
@@ -31,19 +31,19 @@
         </activity>
 
         <activity
-            android:name=".activities.ActivityDriver"
+            android:name="app.damg.expresoinfantil.activities.ActivityDriver"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.ActivityCustomer"
+            android:name="app.damg.expresoinfantil.activities.ActivityCustomer"
             android:screenOrientation="portrait" />
 
-        <service android:name=".push.MyFirebaseMessageService">
+        <service android:name="app.damg.expresoinfantil.push.MyFirebaseMessageService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".activities.LoginActivity"></activity>
+        <activity android:name="app.damg.expresoinfantil.activities.LoginActivity"></activity>
     </application>
 
 </manifest>

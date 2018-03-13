@@ -1,4 +1,4 @@
-package app.qk.teliver.activities;
+package app.damg.expresoinfantil.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
-import app.qk.teliver.R;
-import app.qk.teliver.utils.Constants;
-import app.qk.teliver.utils.MPreference;
+import app.damg.expresoinfantil.R;
+import app.damg.expresoinfantil.utils.Constants;
+import app.damg.expresoinfantil.utils.MPreference;
 
 public class ActivityLauncher extends AppCompatActivity {
 

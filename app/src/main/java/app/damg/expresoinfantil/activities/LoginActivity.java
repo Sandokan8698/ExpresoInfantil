@@ -1,4 +1,4 @@
-package app.qk.teliver.activities;
+package app.damg.expresoinfantil.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,13 +9,13 @@ import android.widget.EditText;
 
 import java.lang.reflect.Method;
 
-import app.qk.teliver.R;
-import app.qk.teliver.utils.BaseResponseHandler;
-import app.qk.teliver.utils.Constants;
-import app.qk.teliver.utils.JsonUtils;
-import app.qk.teliver.utils.MPreference;
-import app.qk.teliver.utils.Repository;
-import app.qk.teliver.utils.Utils;
+import app.damg.expresoinfantil.R;
+import app.damg.expresoinfantil.utils.BaseResponseHandler;
+import app.damg.expresoinfantil.utils.Constants;
+import app.damg.expresoinfantil.utils.JsonUtils;
+import app.damg.expresoinfantil.utils.MPreference;
+import app.damg.expresoinfantil.utils.Repository;
+import app.damg.expresoinfantil.utils.Utils;
 
 public class LoginActivity extends AppCompatActivity implements BaseResponseHandler{
 
