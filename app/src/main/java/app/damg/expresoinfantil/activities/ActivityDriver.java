@@ -15,9 +15,11 @@ import android.view.View;
 import com.teliver.sdk.core.Teliver;
 import com.teliver.sdk.models.UserBuilder;
 
+import app.damg.expresoinfantil.Models.User;
 import app.damg.expresoinfantil.R;
 import app.damg.expresoinfantil.fragments.FragmentDriver;
 import app.damg.expresoinfantil.utils.Constants;
+import app.damg.expresoinfantil.utils.JsonUtils;
 import app.damg.expresoinfantil.utils.Utils;
 import app.damg.expresoinfantil.views.CustomToast;
 
@@ -52,7 +54,9 @@ public class ActivityDriver extends AppCompatActivity implements FragmentManager
         fragmentManager = getSupportFragmentManager();
         fragmentManager.addOnBackStackChangedListener(this);
         changeFragment(0);
-        Teliver.identifyUser(new UserBuilder("test_driver").setUserType(UserBuilder.USER_TYPE.OPERATOR).build());
+
+        User user = JsonUtils.getUser(this);
+        Teliver.identifyUser(new UserBuilder(user.getNombre()).setUserType(UserBuilder.USER_TYPE.OPERATOR).build());
     }
 
     private void changeFragment(int caseValue) {

@@ -25,7 +25,7 @@ public class Api {
     private RequestQueue requestQueue;
     private  final String TAG = "beginRequest";
 
-    private final String BASEURL = "http://192.168.1.4/webui";
+    private final String BASEURL = "http://192.168.41.27/webui";
 
     private static Api ourInstance = new Api();
 

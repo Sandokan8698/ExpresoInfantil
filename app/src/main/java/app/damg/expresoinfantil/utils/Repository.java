@@ -48,6 +48,19 @@ public class Repository implements Iconection{
         }
     }
 
+
+    public void GetCurrentUser()
+    {
+        try {
+
+            HashMap<String, String> headers = ParamUtils.AutherizationHeader(this.getContext());
+            Api.getInstance().request(this, Request.Method.GET, "/api/accounts/current_user",null, headers);
+
+        } catch (Exception e) {
+            Handler.OnFail(e.toString());
+        }
+    }
+
     @Override
     public void OnResponse(String response) {
 

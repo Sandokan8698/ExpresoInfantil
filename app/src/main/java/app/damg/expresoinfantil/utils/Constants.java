@@ -14,6 +14,7 @@ public interface Constants {
 
     String LOGGE_IN_TOKEN = "token";
 
+    String USER = "user";
 
     int PERMISSION_REQ_CODE = 1;
 

@@ -29,6 +29,7 @@ import com.teliver.sdk.core.TripListener;
 import com.teliver.sdk.models.PushData;
 import com.teliver.sdk.models.Trip;
 import com.teliver.sdk.models.TripBuilder;
+import com.teliver.sdk.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,7 @@ import java.util.List;
 import app.damg.expresoinfantil.R;
 import app.damg.expresoinfantil.adapters.TripsAdapter;
 import app.damg.expresoinfantil.utils.Constants;
+import app.damg.expresoinfantil.utils.JsonUtils;
 import app.damg.expresoinfantil.utils.MPreference;
 import app.damg.expresoinfantil.utils.Utils;
 import app.damg.expresoinfantil.views.CustomToast;
@@ -85,10 +87,8 @@ public class FragmentDriver extends Fragment implements TripListener, View.OnCli
 
         GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
         int resultCode = apiAvailability.isGooglePlayServicesAvailable(context);
-        if (resultCode != ConnectionResult.SUCCESS &&
-                apiAvailability.isUserResolvableError(resultCode)) {
-            Dialog dialog = apiAvailability.getErrorDialog(context, resultCode,
-                    900);
+        if (resultCode != ConnectionResult.SUCCESS &&    apiAvailability.isUserResolvableError(resultCode)) {
+            Dialog dialog = apiAvailability.getErrorDialog(context, resultCode, 900);
             dialog.setCancelable(false);
             dialog.show();
         }
@@ -99,35 +99,17 @@ public class FragmentDriver extends Fragment implements TripListener, View.OnCli
                     validateTrip();
             }
         });
+
+
     }
 
     public void validateTrip() {
         try {
-            String provider = manager.getBestProvider(new Criteria(), true);
-            if ((!TextUtils.isEmpty(provider)) &&  LocationManager.PASSIVE_PROVIDER.equals(provider))
-                Utils.showLocationAlert(context);
-            else {
-                dialogBuilder = new Dialog(context);
-                dialogBuilder.getWindow().setBackgroundDrawable(new ColorDrawable(
-                        ContextCompat.getColor(context, android.R.color.transparent)));
-                dialogBuilder.setContentView(R.layout.view_tracking);
-                final EditText edtId = (EditText) dialogBuilder.findViewById(R.id.edt_id);
-                final EditText edtTitle = (EditText) dialogBuilder.findViewById(R.id.edt_title);
-                final EditText edtMsg = (EditText) dialogBuilder.findViewById(R.id.edt_msg);
-                final EditText edtUserId = (EditText) dialogBuilder.findViewById(R.id.edt_user_id);
-                final TextView btnOk = (TextView) dialogBuilder.findViewById(R.id.btn_ok);
-                btnOk.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        startTrip(edtTitle.getText().toString(), edtMsg.getText().toString(),
-                                edtUserId.getText().toString().trim(), edtId.getText().toString().trim());
-                    }
-                });
-                dialogBuilder.show();
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+            app.damg.expresoinfantil.Models.User user = JsonUtils.getUser(this.context);
+            startTrip("", "", user.getNombre(), user.getCedula());
+        }
+         catch (Exception e) {
+           Utils.showMensage(this.context,e.getMessage());
         }
     }
 
@@ -138,7 +120,7 @@ public class FragmentDriver extends Fragment implements TripListener, View.OnCli
             else if (!Utils.isNetConnected(context))
                 Utils.showSnack(viewRoot, getString(R.string.text_no_internet));
             else {
-                dialogBuilder.dismiss();
+
                 TripBuilder builder = new TripBuilder(trackingId);
                 if (!userId.isEmpty()) {
                     PushData pushData = new PushData(userId.split(","));
@@ -195,7 +177,6 @@ public class FragmentDriver extends Fragment implements TripListener, View.OnCli
         else
             CustomToast.showToast(context, getString(R.string.text_location_permission));
     }
-
 
     @Override
     public void onClick(View v) {

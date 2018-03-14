@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import java.lang.reflect.Method;
 
+import app.damg.expresoinfantil.Models.User;
 import app.damg.expresoinfantil.R;
 import app.damg.expresoinfantil.utils.BaseResponseHandler;
 import app.damg.expresoinfantil.utils.Constants;
@@ -75,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements BaseResponseHand
     private void GetUserActor()    {
         try {
             currentMethod = LoginActivity.class.getDeclaredMethod("NavigateToUserScreen", String.class);
-            repository.GetLoginActor();
+            repository.GetCurrentUser();
         }
         catch (Exception e) {
             onLoginFailed(e.toString());
@@ -84,22 +85,23 @@ public class LoginActivity extends AppCompatActivity implements BaseResponseHand
 
     public void NavigateToUserScreen(String response)    {
 
-        String role = JsonUtils.getActor(response);
+       User user = JsonUtils.getUser(response);
 
-        if (role!= null)
+        if (user!= null)
         {
-            if (role.equals("Chofer"))
+            preference.storeString(Constants.USER,response);
+
+            if (user.getActorRole().equals("Chofer"))
             {
                 startActivity(new Intent(this, ActivityDriver.class));
                 return;
             }
 
-            if (role.equals("Padre"))
+            if (user.getActorRole().equals("Padre"))
             {
                 startActivity(new Intent(this, ActivityCustomer.class));
                 return;
             }
-
 
         }
 
